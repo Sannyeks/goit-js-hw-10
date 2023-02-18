@@ -8,6 +8,7 @@ const refs = {
     input : document.getElementById('search-box')
 }
 
+
 const DEBOUNCE_DELAY = 300;
 
 refs.input.addEventListener('input',debounce(onSearch,DEBOUNCE_DELAY))

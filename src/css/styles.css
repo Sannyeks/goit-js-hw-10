@@ -21,10 +21,13 @@ body {
   margin-bottom: 16px;
 }
 
-ul{
-  margin: 0;
+.contry-list {
   padding: 0;
+}
+
+.country-info__list {
   list-style: none;
+  padding: 0;
 }
 
 .country-item__info {
@@ -39,5 +42,5 @@ ul{
 }
 .country-item__name{
   font-size: 25px;
-
+  margin: 5px 10px;
 }
