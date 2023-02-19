@@ -16,7 +16,6 @@ export function fetchCountries(name){
    .then(data => {
     const oneMatch = data.length === 1;
     const maxMatch = 10;
-       // console.log(data)
         if(oneMatch){
            const markup = data.map(country => 
                `<li class="country-item">
@@ -56,4 +55,9 @@ export function fetchCountries(name){
       }
       console.log(error);
    })
+}
+
+function clearInput() {
+    refs.countryList.innerHTML = '';
+    refs.countryInfo.innerHTML = '';
 }
