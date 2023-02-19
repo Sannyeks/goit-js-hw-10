@@ -16,7 +16,8 @@ export function fetchCountries(name){
    .then(data => {
     const oneMatch = data.length === 1;
     const maxMatch = 10;
-        if(oneMatch){
+       if (oneMatch) {
+           clearInput();
            const markup = data.map(country => 
                `<li class="country-item">
                <div class="country-item__info">
@@ -30,7 +31,8 @@ export function fetchCountries(name){
                `).join('')
                refs.countryList.innerHTML = markup;
            }
-           else if(data.length <= maxMatch) {
+        else if (data.length <= maxMatch) {
+                clearInput();
                const markup = data.map(country => 
                   `<div class="country-item__info">
                   <img class="country-item__flag"src="${country.flags.svg}" alt="flag ${country.name.official}">
@@ -42,6 +44,7 @@ export function fetchCountries(name){
                
            }
            else if(data.length > maxMatch){
+            clearInput();
             refs.countryList.innerHTML = '';
             refs.countryInfo.innerHTML = '';
                Notify.info("Too many matches found. Please enter a more specific name.");
@@ -57,7 +60,7 @@ export function fetchCountries(name){
    })
 }
 
-function clearInput() {
-    refs.countryList.innerHTML = '';
-    refs.countryInfo.innerHTML = '';
+function  clearInput() {
+  refs.countryList.innerHTML = '';
+  refs.countryInfo.innerHTML = '';
 }
